@@ -60,7 +60,12 @@ int main() {
 	memset(zBuffer, 0 ,width * height * 4);
 	for (float cubeX = -cubeWidthh; cubeX < cubeWidth; cubeX += incrementSpeed) {
 		for (float cubeY = -cubeWidth; cubeY < cubeWidthh; cubeY += incrementSpeed) {
-			calculateForSurface(cubeX, cubeY -cubeWidth, '#');
+			calculateForSurface(cubeX, cubeY, -cubeWidth, '#');
+			calculateForSurface(cubeWidth, cubeY, cubeX, '&');
+			calculateForSurface(-cubeWidth, cubeY, -cubeX, '~');
+			calculateForSurface(-cubeX, cubeY, cubeWidth, '=');
+			calculateForSurface(cubeX, -cubeWidth, -cubeY, ';');
+			calculateForSurface(cubeX, cubeWidth, cubeY, '-');
 		}
 	}
 	printf("|x1b[H");
